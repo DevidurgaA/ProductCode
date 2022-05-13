@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.wildfly.common:wildfly-common:1.5.4.Final-tlc">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wildfly/common/wildfly-common/1.5.4.Final-tlc/wildfly-common-1.5.4.Final-tlc.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wildfly/common/wildfly-common/1.5.4.Final-tlc/wildfly-common-1.5.4.Final-tlc-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wildfly/common/wildfly-common/1.5.4.Final-tlc/wildfly-common-1.5.4.Final-tlc-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

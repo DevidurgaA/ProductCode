@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<metadata>
+
+    <module name="module_crm_contact">
+
+        <table name="MCOLifeCycleStage" type="11">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="ORG_ID" data-type="BIGINT" nullable="false"/>
+                <column name="NAME" data-type="CHAR" nullable="false"/>
+            </columns>
+            <primary-key name="MCOLifeCycleStage_PK" column="ID" sequence-generator="MCOLifeCycleStage.ID" />
+            <foreign-keys>
+<!--                <foreign-key name="MCOLifeCycleStage_OrgId_FK" reference-table="FGOrganisation"-->
+<!--                             local-column="ORG_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT"/>-->
+            </foreign-keys>
+        </table>
+
+        <table name="MCOContactSource" type="11">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="ORG_ID" data-type="BIGINT" nullable="false"/>
+                <column name="VALUE" data-type="CHAR" nullable="false"/>
+            </columns>
+            <primary-key name="MCOContactSource_PK" column="ID" sequence-generator="MCOContactSource.ID" />
+            <foreign-keys>
+<!--                <foreign-key name="MCOContactSource_OrgId_FK" reference-table="FGOrganisation"-->
+<!--                             local-column="ORG_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT"/>-->
+            </foreign-keys>
+        </table>
+
+        <table name="MCOCompany" type="11">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="ORG_ID" data-type="BIGINT" nullable="false"/>
+                <column name="NAME" data-type="CHAR" nullable="false"/>
+            </columns>
+            <primary-key name="MCOCompany_PK" column="ID" sequence-generator="MCOCompany.ID" />
+            <foreign-keys>
+<!--                <foreign-key name="MCOCompany_OrgId_FK" reference-table="FGOrganisation"-->
+<!--                             local-column="ORG_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT"/>-->
+            </foreign-keys>
+        </table>
+
+        <table name="MCOContact" type="11">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="ORG_ID" data-type="BIGINT" nullable="false"/>
+                <column name="FIRST_NAME" data-type="CHAR" nullable="false"/>
+                <column name="LAST_NAME" data-type="CHAR" nullable="false"/>
+                <column name="COMPANY_ID" data-type="BIGINT" nullable="false"/>
+                <column name="LIFE_CYCLE_STAGE_ID" data-type="BIGINT" nullable="false"/>
+                <column name="SOURCE_ID" data-type="BIGINT" nullable="false"/>
+                <column name="OWNER_ID" data-type="BIGINT" nullable="false"/>
+            </columns>
+            <primary-key name="MCOContact_PK" column="ID" sequence-generator="MCOContact.ID" />
+            <foreign-keys>
+                <foreign-key name="MCOContact_CompanyId_FK" reference-table="MCOCompany"
+                             local-column="COMPANY_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT"/>
+                <foreign-key name="MCOContact_LifeCycleStageId_FK" reference-table="MCOLifeCycleStage"
+                             local-column="LIFE_CYCLE_STAGE_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT"/>
+                <foreign-key name="MCOContact_SourceId_FK" reference-table="MCOContactSource"
+                             local-column="SOURCE_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT"/>
+<!--                <foreign-key name="MCOContact_OrgId_FK" reference-table="FGOrganisation"-->
+<!--                             local-column="ORG_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT"/>-->
+            </foreign-keys>
+        </table>
+
+        <table name="MCOContactEmail" type="11">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="ORG_ID" data-type="BIGINT" nullable="false"/>
+                <column name="CONTACT_ID" data-type="BIGINT" nullable="false"/>
+                <column name="VALUE" data-type="CHAR" nullable="false"/>
+                <column name="TYPE" data-type="CHAR" nullable="false"/>
+            </columns>
+            <primary-key name="MCOContactEmail_PK" column="ID" sequence-generator="MCOContactEmail.ID" />
+            <foreign-keys>
+                <foreign-key name="MCOContactEmail_ContactId_FK" reference-table="MCOContact"
+                             local-column="CONTACT_ID" reference-column="ID" constraint="ON-DELETE-CASCADE"/>
+<!--                <foreign-key name="MCOContactEmail_OrgId_FK" reference-table="FGOrganisation"-->
+<!--                             local-column="ORG_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT"/>-->
+            </foreign-keys>
+        </table>
+
+        <table name="MCOContactMobile" type="11">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="ORG_ID" data-type="BIGINT" nullable="false"/>
+                <column name="TYPE" data-type="CHAR" nullable="false"/>
+                <column name="CONTACT_ID" data-type="BIGINT" nullable="false"/>
+                <column name="NUMBER" data-type="CHAR" nullable="false"/>
+            </columns>
+            <primary-key name="MCOContactMobile_PK" column="ID" sequence-generator="MCOContactMobile.ID" />
+            <foreign-keys>
+                <foreign-key name="MCOContactMobile_ContactId_FK" reference-table="MCOContact"
+                             local-column="CONTACT_ID" reference-column="ID" constraint="ON-DELETE-CASCADE"/>
+<!--                <foreign-key name="MCOContactMobile_OrgId_FK" reference-table="FGOrganisation"-->
+<!--                             local-column="ORG_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT"/>-->
+            </foreign-keys>
+        </table>
+
+    </module>
+
+</metadata>

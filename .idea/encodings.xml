@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/tlc-components/cache/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/cache/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/commons/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/commons/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/features/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/features/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/i18n/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/i18n/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/sql/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/sql/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/tools/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/tools/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/validator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/validator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-components/web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-crm-server/common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-crm-server/common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-crm-server/contact/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-crm-server/contact/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-crm-server/features/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-crm-server/features/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-crm-server/product/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-crm-server/product/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-crm-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-crm-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-parent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tlc-parent/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

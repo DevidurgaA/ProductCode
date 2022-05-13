@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="${project.artifactId}-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.6.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.6.0
+          http://karaf.apache.org/xmlns/features/v1.6.0.xsd">
+
+    <repository>mvn:com.tlc/features/${tlc.features.version}/xml/features</repository>
+    <feature name='tlc-crm-bootstrap' description='Thelaunchclub - CRM - Bootstrap' version='${project.version}'>
+        <feature prerequisite="true">scr</feature>
+        <feature prerequisite="true">scheduler</feature>
+
+        <feature prerequisite="true">tlc-commons</feature>
+        <feature prerequisite="true">tlc-cache</feature>
+        <feature prerequisite="true">tlc-i18n</feature>
+        <feature prerequisite="true">tlc-validator</feature>
+        <feature prerequisite="true">tlc-web</feature>
+        <feature prerequisite="true">tlc-sql</feature>
+
+    </feature>
+
+</features>

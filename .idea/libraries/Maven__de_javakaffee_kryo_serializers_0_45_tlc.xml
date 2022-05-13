@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: de.javakaffee:kryo-serializers:0.45-tlc">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/de/javakaffee/kryo-serializers/0.45-tlc/kryo-serializers-0.45-tlc.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/de/javakaffee/kryo-serializers/0.45-tlc/kryo-serializers-0.45-tlc-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/de/javakaffee/kryo-serializers/0.45-tlc/kryo-serializers-0.45-tlc-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

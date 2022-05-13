@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cache" />
+        <module name="product" />
+        <module name="common" />
+        <module name="web" />
+        <module name="contact" />
+        <module name="validator" />
+        <module name="tools" />
+        <module name="commons" />
+        <module name="i18n" />
+        <module name="sql" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cache" target="17" />
+      <module name="common" target="17" />
+      <module name="commons" target="17" />
+      <module name="components" target="17" />
+      <module name="contact" target="17" />
+      <module name="crm-server" target="17" />
+      <module name="features" target="17" />
+      <module name="features (1) (com.tlc.crm)" target="17" />
+      <module name="i18n" target="17" />
+      <module name="product" target="17" />
+      <module name="sql" target="17" />
+      <module name="tlc-parent" target="17" />
+      <module name="tools" target="17" />
+      <module name="validator" target="17" />
+      <module name="web" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

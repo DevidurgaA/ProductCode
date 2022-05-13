@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<metadata>
+
+    <module name="module_crm_common">
+
+        <table name="MCMDataTransformers">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="CLASS" data-type="CHAR" nullable="false" max-length="750" />
+                <column name="METHOD" data-type="CHAR" nullable="false"/>
+                <column name="ARGUMENTS" data-type="CHAR" nullable="true"/>
+            </columns>
+            <primary-key name="MCMDataTransformers_PK" column="ID" sequence-generator="MCMDataTransformers.ID" />
+            <unique-keys>
+                <unique-key name="MCMDataTransformers_UK1">
+                    <unique-key-column>CLASS</unique-key-column>
+                    <unique-key-column>METHOD</unique-key-column>
+                </unique-key>
+            </unique-keys>
+        </table>
+
+        <table name="MCMDataProvider">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="TYPE" data-type="INTEGER" nullable="false" default-value="1" /> <!-- 1 - SQL , 2 - NOSQL-->
+                <column name="NAME" data-type="CHAR" nullable="false" />
+                <column name="CONFIG_INFO" data-type="CHAR" nullable="true"/>
+            </columns>
+            <primary-key name="MCMDataProvider_PK" column="ID" sequence-generator="MCMDataProvider.ID" />
+            <unique-keys>
+                <unique-key name="MCMDataProvider_UK1">
+                    <unique-key-column>NAME</unique-key-column>
+                    <unique-key-column>TYPE</unique-key-column>
+                </unique-key>
+            </unique-keys>
+        </table>
+
+        <table name="MCMFields">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="PROVIDER_ID" data-type="BIGINT" nullable="false" />
+                <column name="NAME" data-type="CHAR" nullable="false" />
+                <column name="DISPLAY_NAME" data-type="KCHAR" nullable="false" />
+                <column name="PRIMARY" data-type="BOOLEAN" nullable="false" default-value="false" />
+                <column name="SORT" data-type="INTEGER" nullable="false" default-value="0" /> <!--  0- Disabled, 1 - Sortable, 2 - Sort Ascending default, 3 - Sort Descending default-->
+                <column name="SEARCHABLE" data-type="BOOLEAN" nullable="false" default-value="false" />
+                <column name="ORDER" data-type="INTEGER" nullable="false" default-value="1" />
+                <column name="HIDDEN" data-type="BOOLEAN" nullable="false" default-value="false" />
+                <column name="CONFIG_INFO" data-type="TEXT" nullable="true" />
+                <column name="TRANSFORMER_ID" data-type="BIGINT" nullable="true" />
+            </columns>
+            <primary-key name="MCMFields_PK" column="ID" sequence-generator="MCMFields.ID" />
+            <foreign-keys>
+                <foreign-key name="MCMFields_FK1" reference-table="MCMDataProvider" local-column="PROVIDER_ID" reference-column="ID" constraint="ON-DELETE-CASCADE" />
+                <foreign-key name="MCMFields_FK2" reference-table="MCMDataTransformers" local-column="TRANSFORMER_ID" reference-column="ID" constraint="ON-DELETE-CASCADE" />
+            </foreign-keys>
+            <unique-keys>
+                <unique-key name="MCMFields_UK1">
+                    <unique-key-column>PROVIDER_ID</unique-key-column>
+                    <unique-key-column>NAME</unique-key-column>
+                </unique-key>
+                <unique-key name="MCMFields_UK2">
+                    <unique-key-column>PROVIDER_ID</unique-key-column>
+                    <unique-key-column>DISPLAY_NAME</unique-key-column>
+                </unique-key>
+            </unique-keys>
+        </table>
+
+        <table name="MCMFieldSQLTable">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="TABLE_NAME" data-type="CHAR" nullable="false" />
+            </columns>
+            <primary-key name="MCMFieldSQLTable_PK" column="ID" sequence-generator="MCMFieldSQLTable.ID" />
+            <unique-keys>
+                <unique-key name="MCMFieldSQLTable_UK1">
+                    <unique-key-column>TABLE_NAME</unique-key-column>
+                </unique-key>
+            </unique-keys>
+        </table>
+
+        <table name="MCMFieldSQLSource">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="FIELD_ID" data-type="BIGINT" nullable="false" />
+                <column name="TABLE_ID" data-type="BIGINT" nullable="false"/>
+                <column name="COLUMN" data-type="CHAR" nullable="false"/>
+                <column name="TYPE" data-type="INTEGER" nullable="false" default-value="0" /> <!-- 1. Distinct, 2. Count, 3. Min, 4. Max, 5. Avg -->
+                <column name="FLAG" data-type="INTEGER" nullable="false" default-value="0" />
+            </columns>
+            <primary-key name="MCMFieldSQLSource_PK" column="ID" sequence-generator="MCMFieldSQLSource.ID" />
+            <foreign-keys>
+                <foreign-key name="MCMFieldSQLSource_FK1" reference-table="MCMFields" local-column="FIELD_ID" reference-column="ID" constraint="ON-DELETE-CASCADE" />
+                <foreign-key name="MCMFieldSQLSource_FK2" reference-table="MCMFieldSQLTable" local-column="TABLE_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT" />
+            </foreign-keys>
+            <unique-keys>
+                <unique-key name="MCMFieldSQLSource_UK1">
+                    <unique-key-column>FIELD_ID</unique-key-column>
+                </unique-key>
+            </unique-keys>
+        </table>
+
+        <table name="OMCMConfiguredFields">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="PROVIDER_ID" data-type="BIGINT" nullable="false" />
+                <column name="USER_ID" data-type="BIGINT" nullable="false" />
+                <column name="FIELD_ID" data-type="BIGINT" nullable="false" />
+                <column name="ORDER" data-type="INTEGER" nullable="false" />
+            </columns>
+            <primary-key name="OMCMConfiguredFields_PK" column="ID" sequence-generator="OMCMConfiguredFields.ID" />
+            <foreign-keys>
+                <foreign-key name="OMCMConfiguredFields_FK1" reference-table="MCMDataProvider" local-column="PROVIDER_ID" reference-column="ID" constraint="ON-DELETE-CASCADE" />
+                <foreign-key name="OMCMConfiguredFields_FK2" reference-table="MCMFields" local-column="FIELD_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT" />
+                <!--foreign-key name="OMCMConfiguredFields_FK3" reference-table="OMIAMUserDetails" local-column="USER_ID" reference-column="ID" constraint="ON-DELETE-CASCADE" /-->
+            </foreign-keys>
+            <unique-keys>
+                <unique-key name="OMCMConfiguredFields_UK1">
+                    <unique-key-column>USER_ID</unique-key-column>
+                    <unique-key-column>FIELD_ID</unique-key-column>
+                </unique-key>
+                <unique-key name="OMCMConfiguredFields_UK2">
+                    <unique-key-column>PROVIDER_ID</unique-key-column>
+                    <unique-key-column>USER_ID</unique-key-column>
+                    <unique-key-column>ORDER</unique-key-column>
+                </unique-key>
+            </unique-keys>
+        </table>
+
+    </module>
+
+</metadata>

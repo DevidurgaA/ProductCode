@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dumpdata>
+
+    <module name="tlc_crm_product">
+
+        <MCMFieldSQLTable ID="MCMFieldSQLTable:ID:CO:100" TABLE_NAME="MPOProduct"/>
+
+        <MCMDataProvider ID="MCMDataProvider:ID:CO:100" TYPE="1" NAME="PRODUCT_LIST">
+            <MCMFields ID="MCMFields:ID:CO:50" NAME="id" DISPLAY_NAME="i18n.product.id.display.name" PRIMARY="true" SORT="1" SEARCHABLE="false" ORDER="5" HIDDEN="true">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:50" TABLE_ID="MCMFieldSQLTable:ID:CO:100" COLUMN="ID" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:100" NAME="name" DISPLAY_NAME="i18n.product.name.display.name" SORT="1" SEARCHABLE="true" ORDER="10" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:100" TABLE_ID="MCMFieldSQLTable:ID:CO:100" COLUMN="NAME" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:150" NAME="productCode" DISPLAY_NAME="i18n.product.code.display.name" SORT="1" SEARCHABLE="true" ORDER="15" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:150" TABLE_ID="MCMFieldSQLTable:ID:CO:100" COLUMN="PRODUCT_CODE" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:200" NAME="skuNumber" DISPLAY_NAME="i18n.product.skuNumber.display.name" SORT="1" SEARCHABLE="true" ORDER="20" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:200" TABLE_ID="MCMFieldSQLTable:ID:CO:100" COLUMN="SKU_NUMBER" TYPE="" FLAG=""/>
+            </MCMFields>
+        </MCMDataProvider>
+
+    </module>
+
+</dumpdata>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.tlc</groupId>
+        <artifactId>tlc-parent</artifactId>
+        <version>2.0.13</version>
+    </parent>
+
+    <groupId>com.tlc.crm</groupId>
+    <artifactId>crm-server</artifactId>
+    <version>2.0.2-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+
+        <tlc.comp.version>4.1.1-SNAPSHOT</tlc.comp.version>
+
+        <tlc.features.version>${tlc.comp.version}</tlc.features.version>
+        <tlc.commons.version>${tlc.comp.version}</tlc.commons.version>
+        <tlc.validator.version>${tlc.comp.version}</tlc.validator.version>
+        <tlc.cache.version>${tlc.comp.version}</tlc.cache.version>
+        <tlc.i18n.version>${tlc.comp.version}</tlc.i18n.version>
+        <tlc.web.version>${tlc.comp.version}</tlc.web.version>
+        <tlc.sql.version>${tlc.comp.version}</tlc.sql.version>
+    </properties>
+
+    <modules>
+        <module>common</module>
+        <module>contact</module>
+        <module>features</module>
+        <module>product</module>
+    </modules>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.core</artifactId>
+        </dependency>
+
+    </dependencies>
+    <scm>
+        <url>https://github.com/thelaunchclub/tlc-crm-server.git</url>
+        <connection>scm:git:https://github.com/thelaunchclub/tlc-crm-server.git</connection>
+        <developerConnection>scm:git:https://github.com/thelaunchclub/tlc-crm-server.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <repositories>
+        <repository>
+            <id>tlc.mvn.reader</id>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <url>https://mvn.thelaunchclub.in/artifactory/server-repository/</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <targetPath>resources</targetPath>
+            </resource>
+        </resources>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.karaf.tooling</groupId>
+                    <artifactId>karaf-maven-plugin</artifactId>
+                    <configuration>
+                        <includeTransitiveDependency>true</includeTransitiveDependency>
+                        <markTransitiveAsDependency>true</markTransitiveAsDependency>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

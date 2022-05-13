@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="${project.artifactId}-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.6.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.6.0
+          http://karaf.apache.org/xmlns/features/v1.6.0.xsd">
+
+    <feature name='tlc-web' description='Thelaunchclub - Web' version='${project.version}'>
+        <feature prerequisite="true">scr</feature>
+        <feature prerequisite="true">tlc-commons</feature>
+
+        <bundle dependency="true" start-level="40">mvn:org.jboss.xnio/xnio-api/3.8.6.Final</bundle>
+        <bundle start-level="45">mvn:org.jboss.xnio/xnio-nio/3.8.6.Final</bundle>
+    </feature>
+
+</features>

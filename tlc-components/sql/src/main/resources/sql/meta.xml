@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- module name -->
+<!-- table name -->
+<!-- columns column name data-type nullable max-length default-value --> <!-- CHAR SCHAR KCHAR TEXT STEXT SMALLINT INTEGER BIGINT BOOLEAN BLOB-->
+<!-- unique-keys name unique-key-column -->
+<!-- foreign-keys foreign-key name reference-table local-column reference-column constraint --> <!-- ON-DELETE-CASCADE ON-DELETE-RESTRICT -->
+<!-- primary-key name column sequence-generator -->
+<!-- indexes index name index-column-->
+<metadata>
+
+    <module name="module_sql">
+
+        <table name="FGOrganisation">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="NAME" data-type="CHAR" nullable="false" max-length="200"/>
+                <column name="IS_ACTIVE" data-type="BOOLEAN" default-value="true"/>
+            </columns>
+            <primary-key name="FGOrganisation_PK" column="ID" sequence-generator="FGOrganisation.ID" />
+        </table>
+
+        <table name="FGSequencePattern">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="TABLE_NAME" data-type="CHAR" nullable="false" />
+                <column name="PATTERN" data-type="CHAR" nullable="false" />
+                <column name="COMMIT_VALUE" data-type="BIGINT" nullable="false" />
+            </columns>
+            <primary-key name="FGSequencePattern_PK" column="ID" sequence-generator="FGSequencePattern.ID" />
+            <indexes>
+                <index name="FGSequencePattern_Idx1">
+                    <index-column>TABLE_NAME</index-column>
+                </index>
+            </indexes>
+        </table>
+
+    </module>
+
+</metadata>

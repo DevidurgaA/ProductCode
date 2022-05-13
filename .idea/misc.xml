@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/tlc-components/cache/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-components/commons/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-components/features/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-components/i18n/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-components/sql/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-components/tools/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-components/validator/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-components/web/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-components/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-crm-server/common/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-crm-server/contact/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-crm-server/features/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-crm-server/product/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-crm-server/pom.xml" />
+        <option value="$PROJECT_DIR$/tlc-parent/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK" />
+</project>

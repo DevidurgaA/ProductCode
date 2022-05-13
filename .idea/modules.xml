@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ClonedProject.iml" filepath="$PROJECT_DIR$/.idea/ClonedProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-components/cache/cache.iml" filepath="$PROJECT_DIR$/tlc-components/cache/cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-crm-server/common/common.iml" filepath="$PROJECT_DIR$/tlc-crm-server/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-components/commons/commons.iml" filepath="$PROJECT_DIR$/tlc-components/commons/commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-components/components.iml" filepath="$PROJECT_DIR$/tlc-components/components.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-crm-server/contact/contact.iml" filepath="$PROJECT_DIR$/tlc-crm-server/contact/contact.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-crm-server/crm-server.iml" filepath="$PROJECT_DIR$/tlc-crm-server/crm-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-components/features/features.iml" filepath="$PROJECT_DIR$/tlc-components/features/features.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-crm-server/features/features (1) (com.tlc.crm).iml" filepath="$PROJECT_DIR$/tlc-crm-server/features/features (1) (com.tlc.crm).iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-components/i18n/i18n.iml" filepath="$PROJECT_DIR$/tlc-components/i18n/i18n.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-crm-server/product/product.iml" filepath="$PROJECT_DIR$/tlc-crm-server/product/product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-components/sql/sql.iml" filepath="$PROJECT_DIR$/tlc-components/sql/sql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-parent/tlc-parent.iml" filepath="$PROJECT_DIR$/tlc-parent/tlc-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-components/tools/tools.iml" filepath="$PROJECT_DIR$/tlc-components/tools/tools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-components/validator/validator.iml" filepath="$PROJECT_DIR$/tlc-components/validator/validator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tlc-components/web/web.iml" filepath="$PROJECT_DIR$/tlc-components/web/web.iml" />
+    </modules>
+  </component>
+</project>

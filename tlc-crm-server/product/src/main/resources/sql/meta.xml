@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<metadata>
+
+    <module name="module_crm_product">
+
+        <table name="MPOCurrency" type="11">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="ORG_ID" data-type="BIGINT" nullable="false"/>
+                <column name="NAME" data-type="CHAR" nullable="false"/>
+            </columns>
+            <primary-key name="MPOCurrency_PK" column="ID" sequence-generator="MPOCurrency.ID" />
+            <foreign-keys>
+<!--                <foreign-key name="MPOCurrency_OrgId_FK" reference-table="FGOrganisation"
+                             local-column="ORG_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT"/>-->
+            </foreign-keys>
+        </table>
+
+        <table name="MPOCategory" type="11">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="ORG_ID" data-type="BIGINT" nullable="false"/>
+                <column name="NAME" data-type="CHAR" nullable="false"/>
+            </columns>
+            <primary-key name="MPOCategory_PK" column="ID" sequence-generator="MPOCategory.ID" />
+            <foreign-keys>
+<!--                <foreign-key name="MPOCategory_OrgId_FK" reference-table="FGOrganisation"
+                             local-column="ORG_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT"/>-->
+            </foreign-keys>
+        </table>
+
+        <table name="MPOProduct" type="11">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="ORG_ID" data-type="BIGINT" nullable="false"/>
+                <column name="NAME" data-type="CHAR" nullable="false"/>
+                <column name="DESCRIPTION" data-type="CHAR" max-length="200" nullable="true"/>
+                <column name="SKU_NUMBER" data-type="CHAR" nullable="false"/>
+                <column name="PRODUCT_CODE" data-type="CHAR" nullable="false"/>
+                <column name="CATEGORY_ID" data-type="BIGINT" nullable="false"/>
+            </columns>
+            <primary-key name="MPOProduct_PK" column="ID" sequence-generator="MPOProduct.ID" />
+            <foreign-keys>
+                <!-- <foreign-key name="MPOProduct_OrgId_FK" reference-table="FGOrganisation"
+                             local-column="ORG_ID" reference-column="ID" constraint="ON-DELETE-RESTRICT"/> -->
+                <foreign-key name="MPOProduct_CategoryId_FK" reference-table="MPOCategory"
+                             local-column="ORG_ID" reference-column="ID" constraint="ON-DELETE-CASCADE"/>
+            </foreign-keys>
+        </table>
+
+        <table name="MPOPriceTag" type="11">
+            <columns>
+                <column name="ID" data-type="BIGINT"/>
+                <column name="ORG_ID" data-type="BIGINT" nullable="false"/>
+                <column name="PRICE" data-type="CHAR" nullable="false"/>
+                <column name="PRODUCT_ID" data-type="BIGINT" nullable="false"/>
+                <column name="CURRENCY_ID" data-type="BIGINT" nullable="false"/>
+                <!-- TODO Need to change to decimal supported datatype of price column to support decimal values-->
+            </columns>
+            <primary-key name="MPOPriceTag_PK" column="ID" sequence-generator="MPOPriceTag.ID" />
+            <foreign-keys>
+                <!--  <foreign-key name="MPOPriceTag_OrgId_FK" reference-table="FGOrganisation"
+                                             local-column="ORG_ID" reference-column="ID" constraint="ON-DELETE-CASCADE"/>-->
+                <foreign-key name="MPOPriceTag_CurrencyId_FK" reference-table="MPOCurrency"
+                             local-column="CURRENCY_ID" reference-column="ID" constraint="ON-DELETE-CASCADE"/>
+                <foreign-key name="MPOPriceTag_ProductId_FK" reference-table="MPOProduct"
+                             local-column="PRODUCT_ID" reference-column="ID" constraint="ON-DELETE-CASCADE"/>
+            </foreign-keys>
+        </table>
+
+
+    </module>
+
+</metadata>

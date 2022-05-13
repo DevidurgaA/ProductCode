@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.tlc:sql:4.1.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/tlc/sql/4.1.1-SNAPSHOT/sql-4.1.1-20220301.104302-56.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/tlc/sql/4.1.1-SNAPSHOT/sql-4.1.1-20220301.104302-56-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/tlc/sql/4.1.1-SNAPSHOT/sql-4.1.1-20220301.104302-56-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

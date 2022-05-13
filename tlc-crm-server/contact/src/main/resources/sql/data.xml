@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dumpdata>
+
+    <module name="tlc_crm_contact">
+
+        <!--MCMDataTransformers ID="" CLASS="" METHOD="" ARGUMENTS=""/-->
+
+        <!--MCMDataProvider ID="" TYPE="" NAME="" CONFIG_INFO=""/-->
+
+        <!--MCMFields ID="" PROVIDER_ID="" NAME="" DISPLAY_NAME="" PRIMARY="" SORT="" SEARCHABLE="" ORDER="" HIDDEN="" CONFIG_INFO="" TRANSFORMER_ID=""/-->
+
+        <!--MCMFieldSQLTable ID="" TABLE_NAME="" /-->
+
+        <!--MCMFieldSQLSource ID="" FIELD_ID="" TABLE_ID="" COLUMN="" TYPE="" FLAG=""/-->
+
+        <MCMFieldSQLTable ID="MCMFieldSQLTable:ID:CO:1" TABLE_NAME="MCOCompany"/>
+        <MCMFieldSQLTable ID="MCMFieldSQLTable:ID:CO:2" TABLE_NAME="MCOContact"/>
+        <MCMFieldSQLTable ID="MCMFieldSQLTable:ID:CO:3" TABLE_NAME="MCOContactEmail"/>
+        <MCMFieldSQLTable ID="MCMFieldSQLTable:ID:CO:4" TABLE_NAME="MCOContactMobile"/>
+        <MCMFieldSQLTable ID="MCMFieldSQLTable:ID:CO:5" TABLE_NAME="MCOContactSource"/>
+        <MCMFieldSQLTable ID="MCMFieldSQLTable:ID:CO:6" TABLE_NAME="MCOLifeCycleStage"/>
+
+        <MCMDataProvider ID="MCMDataProvider:ID:CO:50" TYPE="1" NAME="COMPANY_LIST">
+            <MCMFields ID="MCMFields:ID:CO:50" NAME="id" DISPLAY_NAME="i18n.contact.company.id.display.name" PRIMARY="true" SORT="1" SEARCHABLE="false" ORDER="5" HIDDEN="true">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:50" TABLE_ID="MCMFieldSQLTable:ID:CO:1" COLUMN="ID" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:100" NAME="name" DISPLAY_NAME="i18n.contact.company.display.name" SORT="1" SEARCHABLE="true" ORDER="10" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:100" TABLE_ID="MCMFieldSQLTable:ID:CO:1" COLUMN="NAME" TYPE="" FLAG=""/>
+            </MCMFields>
+        </MCMDataProvider>
+
+        <MCMDataProvider ID="MCMDataProvider:ID:CO:100" TYPE="1" NAME="LIFE_CYCLE_STAGE_LIST">
+            <MCMFields ID="MCMFields:ID:CO:150" NAME="id" DISPLAY_NAME="i18n.contact.stage.id.display.name" PRIMARY="true" SORT="1" SEARCHABLE="false" ORDER="5" HIDDEN="true">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:150" TABLE_ID="MCMFieldSQLTable:ID:CO:6" COLUMN="ID" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:200" NAME="name" DISPLAY_NAME="i18n.contact.stage.display.name" SORT="1" SEARCHABLE="true" ORDER="10" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:200" TABLE_ID="MCMFieldSQLTable:ID:CO:6" COLUMN="NAME" TYPE="" FLAG=""/>
+            </MCMFields>
+        </MCMDataProvider>
+
+        <MCMDataProvider ID="MCMDataProvider:ID:CO:150" TYPE="1" NAME="CONTACT_SOURCE_LIST">
+            <MCMFields ID="MCMFields:ID:CO:250" NAME="id" DISPLAY_NAME="i18n.contact.source.id.display.name" PRIMARY="true" SORT="1" SEARCHABLE="false" ORDER="5" HIDDEN="true">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:250" TABLE_ID="MCMFieldSQLTable:ID:CO:5" COLUMN="ID" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:300" NAME="name" DISPLAY_NAME="i18n.contact.source.display.name" SORT="1" SEARCHABLE="true" ORDER="10" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:300" TABLE_ID="MCMFieldSQLTable:ID:CO:5" COLUMN="VALUE" TYPE="" FLAG=""/>
+            </MCMFields>
+        </MCMDataProvider>
+
+        <MCMDataProvider ID="MCMDataProvider:ID:CO:200" TYPE="1" NAME="CONTACT_LIST">
+            <MCMFields ID="MCMFields:ID:CO:350" NAME="id" DISPLAY_NAME="i18n.contact.id.display.name" PRIMARY="true" SORT="1" SEARCHABLE="false" ORDER="5" HIDDEN="true">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:350" TABLE_ID="MCMFieldSQLTable:ID:CO:2" COLUMN="ID" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:400" NAME="first_name" DISPLAY_NAME="i18n.contact.firstName.display.name" SORT="1" SEARCHABLE="true" ORDER="10" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:400" TABLE_ID="MCMFieldSQLTable:ID:CO:2" COLUMN="FIRST_NAME" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:450" NAME="last_name" DISPLAY_NAME="i18n.contact.lastName.display.name" SORT="1" SEARCHABLE="true" ORDER="15" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:450" TABLE_ID="MCMFieldSQLTable:ID:CO:2" COLUMN="LAST_NAME" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:500" NAME="email" DISPLAY_NAME="i18n.contact.email.display.name" SORT="1" SEARCHABLE="true" ORDER="20" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:500" TABLE_ID="MCMFieldSQLTable:ID:CO:3" COLUMN="VALUE" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:505" NAME="email_type" DISPLAY_NAME="i18n.contact.emailType.display.name" SORT="1" SEARCHABLE="true" ORDER="21" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:505" TABLE_ID="MCMFieldSQLTable:ID:CO:3" COLUMN="TYPE" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:550" NAME="mobile" DISPLAY_NAME="i18n.contact.mobile.display.name" SORT="1" SEARCHABLE="true" ORDER="25" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:550" TABLE_ID="MCMFieldSQLTable:ID:CO:4" COLUMN="NUMBER" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:555" NAME="mobile_type" DISPLAY_NAME="i18n.contact.mobileType.display.name" SORT="1" SEARCHABLE="true" ORDER="26" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:555" TABLE_ID="MCMFieldSQLTable:ID:CO:4" COLUMN="TYPE" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:600" NAME="source" DISPLAY_NAME="i18n.contact.source.display.name" SORT="1" SEARCHABLE="true" ORDER="30" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:600" TABLE_ID="MCMFieldSQLTable:ID:CO:5" COLUMN="VALUE" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:650" NAME="stage" DISPLAY_NAME="i18n.contact.stage.display.name" SORT="1" SEARCHABLE="true" ORDER="35" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:650" TABLE_ID="MCMFieldSQLTable:ID:CO:6" COLUMN="NAME" TYPE="" FLAG=""/>
+            </MCMFields>
+            <MCMFields ID="MCMFields:ID:CO:700" NAME="company" DISPLAY_NAME="i18n.contact.company.display.name" SORT="1" SEARCHABLE="true" ORDER="40" HIDDEN="false">
+                <MCMFieldSQLSource ID="MCMFieldSQLSource:ID:CO:700" TABLE_ID="MCMFieldSQLTable:ID:CO:1" COLUMN="NAME" TYPE="" FLAG=""/>
+            </MCMFields>
+        </MCMDataProvider>
+    </module>
+
+</dumpdata>
